@@ -67,7 +67,7 @@
     {
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/UserRegistation/GetUserDetails",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "ServiceName": "catalogService",
       "UpstreamPathTemplate": "/api/gatway/UserRegistation/GetUserDetails",
       "UpstreamHttpMethod": [ "Get" ]
@@ -76,7 +76,7 @@
     {
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/UserRegistation/InsertUserDetails",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "ServiceName": "catalogService",
       "UpstreamPathTemplate": "/api/gatway/UserRegistation/InsertUserDetails",
       "UpstreamHttpMethod": [ "Get" ]
@@ -85,7 +85,7 @@
     {
       "UseServiceDiscovery": true,
       "DownstreamPathTemplate": "/api/users/authenticate",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "ServiceName": "catalogService",
       "UpstreamPathTemplate": "/api/gatway/users/authenticate",
       "UpstreamHttpMethod": [ "Get" ]

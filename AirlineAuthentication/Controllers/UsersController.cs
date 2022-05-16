@@ -22,15 +22,14 @@ namespace AirlineAuthentication.Controllers
         {
             iJWTManager = jWTManager;
             _flightBookingDBContext = flightBookingDBContext;
-        }
-        
+        }        
         
         [AllowAnonymous]
         [HttpPost]
         [Route("authenticate")]
         public IActionResult Authenticate([FromBody] Users userdata)
         {
-            IEnumerable<AuthenticateUser> Users = _flightBookingDBContext.AuthenticateUsers.ToList().Where(o => o.UserName.ToLower() == userdata.Name.ToLower() && o.Password == userdata.Password);
+            IEnumerable<AuthenticateUser> Users = _flightBookingDBContext.AuthenticateUsers.ToList().Where(o => o.UserName.ToLower() == userdata.UserName.ToLower() && o.Password == userdata.Password);
             if(Users.Count() <=0)
             {
                 return Unauthorized("Invalid Credentials");
@@ -42,6 +41,6 @@ namespace AirlineAuthentication.Controllers
             }
 
             return Ok(token);
-        }
+        }        
     }
 }

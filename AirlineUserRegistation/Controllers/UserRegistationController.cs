@@ -39,7 +39,7 @@ namespace AirlineUserRegistation.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("InsertUserDetails")]
         public IActionResult InsertUser(UserRegister UserData)
         {
