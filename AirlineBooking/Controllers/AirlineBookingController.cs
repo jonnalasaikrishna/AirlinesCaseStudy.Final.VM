@@ -218,6 +218,8 @@ namespace AirlineBooking.Controllers
 
         }
 
+        //Get details by Email id 
+
         [HttpGet]
         [Route("Email-ticket")]
         public IActionResult GetTicket(string EmailID)
