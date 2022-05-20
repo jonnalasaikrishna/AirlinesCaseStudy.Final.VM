@@ -8,9 +8,7 @@ namespace AirlineBooking.ViewModels
 {
     public class UsersViewModel
     {
-        [Required]
-        [EmailAddress]
-        public string EmailID { set; get; }
+        
         [Required]
         [StringLength(50)]
         public string UserName { set; get; }

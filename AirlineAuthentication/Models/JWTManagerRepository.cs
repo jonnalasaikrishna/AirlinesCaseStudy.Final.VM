@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CommonDAL.Models;
 
 namespace AirlineAuthentication.Models
 {
@@ -27,7 +28,7 @@ namespace AirlineAuthentication.Models
         }
 
 
-        public Tokens Authenticate(Users users)
+        public Tokens Authenticate(AuthenticateUser users)
         {
             //if (!UserRecords.Any(x => x.Key == users.Name && x.Value == users.Password))
             //{
@@ -41,13 +42,13 @@ namespace AirlineAuthentication.Models
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name,users.Name)
+                    new Claim(ClaimTypes.Name,users.EmailId)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return new Tokens { Token = tokenHandler.WriteToken(token) };
+            return new Tokens { Token = tokenHandler.WriteToken(token),UserId=users.UserId,RoleId=users.RoleId };
         }
     }
 }

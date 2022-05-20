@@ -9,5 +9,8 @@ namespace AirlineAuthentication.Models
     {
         public string Token { get; set; }
         public string RefreshToken { get; set; }
+        public int? RoleId { get; set; }
+        public int? UserId { get; set; }
+
     }
 }

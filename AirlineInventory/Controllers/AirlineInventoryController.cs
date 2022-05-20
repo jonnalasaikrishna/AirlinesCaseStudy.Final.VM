@@ -38,7 +38,7 @@ namespace AirlineInventory.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("InsertInventryDetails")]
         public IActionResult InsertUser(InventoryDetail InventoryData)
         {
@@ -47,7 +47,7 @@ namespace AirlineInventory.Controllers
                 _flightBookingDBContext.InventoryDetails.Add(InventoryData);
                 _flightBookingDBContext.SaveChanges();
 
-                return Ok("Inventory Details was added");
+                return Accepted(new { Message = "Flight Details Added Successfully" });
             }
             catch (Exception ex)
             {

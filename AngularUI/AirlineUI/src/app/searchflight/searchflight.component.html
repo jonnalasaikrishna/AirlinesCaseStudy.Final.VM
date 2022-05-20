@@ -1,0 +1,86 @@
+<h3 class="heading-report">Search Flights</h3>
+<!-- -->
+<!-- <form [formGroup]="flightmodel.formCustomerGroup"> -->
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <div class="form-group">
+                <br>
+                <label class="form-label">Date Of Journey : <span style="color:red">*</span></label>
+                <div class="input-group">
+                    <!--  -->
+                    <input type="date" placeholder="From Place" 
+                        [(ngModel)]="flightmodel.fromDate" class="form-control">
+
+                </div>
+                <br> 
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <!-- -->
+                <label class="form-label">From Place : <span style="color:red">*</span></label>
+                <input type="text" placeholder="From Place" 
+                    [(ngModel)]="flightmodel.fromPlace" class="form-control">
+
+            </div>
+            
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <!--  -->
+                <label class="form-label">To Place : <span style="color:red">*</span></label>
+                <input type="text" placeholder="To Place" 
+                    [(ngModel)]="flightmodel.toPlace" class="form-control">
+            </div>
+            
+        </div>
+        <div class="col-md-12" style="text-align: center;">
+            <input type="submit" value="Search Flights" 
+                (click)="GetFromServer()" class="btn btn-danger">
+        </div>
+    </div>
+<!-- </form> -->
+
+<!-- <div class="container" style="margin-top: 20px;">
+    <div class="row" *ngFor="let flight of flights">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+            <div class="card text-center">
+                <div class="card-header" style="background: linear-gradient(to right, #6270be, #da4f4f);">
+                    <h5 class="card-title" style="color: white;"> flightNumber: {{flight.flightNumber}} </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">From Place:</div>
+                        <div class="col-md-3" style="font-weight:bold">{{flight.fromPlace}}</div>
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">To Place:</div>
+                        <div class="col-md-3" style="font-weight:bold"> {{flight.toPlace}}</div>
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">State Date</div>
+                        <div class="col-md-3" style="font-weight:bold">{{flight.startDate}}</div>
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">End Date:</div>
+                        <div class="col-md-3" style="font-weight:bold"> {{flight.startDate}}</div>
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">State Time</div>
+                        <div class="col-md-3" style="font-weight:bold">{{flight.startTime}}</div>
+                        <div class="col-md-3" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">End Time:</div>
+                        <div class="col-md-3" style="font-weight:bold"> {{flight.startTime}}</div>
+                        <div class="col-md-6" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">Business Class Sets Available</div>
+                        <div class="col-md-6" style="font-weight:bold">{{flight.bclassAvailCount}}</div>
+                        <div class="col-md-6" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">Normal Class Sets Available</div>
+                        <div class="col-md-6" style="font-weight:bold"> {{flight.nBclassAvailableCount}}</div>
+                        <div class="col-md-6" style="background: linear-gradient(to right, #e4e7f9, #ffdede); ">Ticket Cost</div>
+                        <div class="col-md-6" style="font-weight:bold"> {{flight.ticketCost}}</div>
+                    </div>
+                   
+                    
+                </div>
+                <div class="card-footer" style="background: linear-gradient(to right, #6270be, #da4f4f);">
+                    <input type="button" value="Book Ticket" class="btn btn-danger" (click)="Bookflight(flight)" />
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div> -->

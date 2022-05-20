@@ -1,0 +1,129 @@
+<h3 class="heading-report">Book a Flight Ticket</h3>
+
+<div class="row align-items-center">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">Flight Number<span style="color:red">*</span></label>
+
+            <input type="text" placeholder="Flight Number" [(ngModel)]="bookflightDataModel.flightNumber"
+                class="form-control">
+
+        </div>
+    </div>
+    <br>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">Date Of Journey : <span style="color:red">*</span></label>
+            <input type="date" placeholder="Start Date" [(ngModel)]="bookflightDataModel.dateOfJourney"
+                class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">From Place : <span style="color:red">*</span></label>
+            <input type="text" placeholder="From Place" [(ngModel)]="bookflightDataModel.fromPlace"
+                class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">To Place : <span style="color:red">*</span></label>
+            <input type="text" placeholder="To Place" [(ngModel)]="bookflightDataModel.toPlace" class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">Boarding Time : <span style="color:red">*</span></label>
+            <input type="text" placeholder="Start Date" [(ngModel)]="bookflightDataModel.boardingTime"
+                class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">Email ID: <span style="color:red">*</span></label>
+            <input type="email" placeholder="Enter Email ID" [(ngModel)]="bookflightDataModel.emailID"
+                class="form-control">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="form-label">createdBy <span style="color:red">*</span></label>
+            <input type="text" placeholder="created By" [(ngModel)]="bookflightDataModel.createdBy"
+                class="form-control">
+        </div>
+    </div>
+
+</div>
+<div class="row align-items-center">
+    <br><br>
+    <h3 class="heading-report">Passenger Details
+    </h3>
+</div>
+<div class="row align-items-center">
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Name Of Passenger<span style="color:red">*</span></label>
+
+                <input type="text" [(ngModel)]="usersDateaModel.userName" placeholder="Name Of Passenger"
+                    class="form-control">
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Pass Port Number : <span style="color:red">*</span></label>
+                <input type="text" placeholder="passportNumber" [(ngModel)]="usersDateaModel.passportNumber"
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Age: <span style="color:red">*</span></label>
+                <input type="text" placeholder="Age" [(ngModel)]="usersDateaModel.age" class="form-control">
+
+
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+
+            <input type="submit" value="Add Another Passenger" (click)="AddPassenger()" class="btn btn-success">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="example" class="table table-bordered table-stripped " style="width: 100%;background-color: #626366;" >
+                <thead>
+                    <tr>
+                        <td>Name</td>
+
+                        <td>Pass Port Number</td>
+                        <td>Age</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cust of passengerArray">
+                        <td>{{cust.userName}}</td>
+                        <td>{{cust.passportNumber}}</td>
+                        <td>{{cust.age}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+
+        <input type="submit" value="Book Ticket" (click)="PostBookingDetails()" class="btn btn-success">
+    </div>
+</div>

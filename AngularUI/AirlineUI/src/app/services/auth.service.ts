@@ -6,8 +6,8 @@ import { RegisterData } from '../models/RegisterData';
 
 @Injectable()
 export class AuthService {
-    private _registerUrl = "https://localhost:44374/api/UserRegistation/InsertUserDetails";
-    private _loginUrl = "https://localhost:44308/api/Users/authenticate"
+    private _registerUrl = "https://localhost:44380/api/UserRegistation/InsertUserDetails";
+    private _loginUrl = "https://localhost:44372/api/Users/authenticate"
 
     constructor(private http: HttpClient, private _router: Router) {
 
@@ -18,13 +18,16 @@ export class AuthService {
     }
 
     registerUser(user: RegisterData) {
+        debugger;
         console.log(user);
         return this.http.post<any>(this._registerUrl, user)
     }
 
     logoutUser() {
         localStorage.removeItem('token')
-        this._router.navigate(['/events'])
+        localStorage.removeItem('roleId')
+        localStorage.removeItem('userId')
+        this._router.navigate(['/search'])
     }
 
     getToken() {
@@ -32,5 +35,19 @@ export class AuthService {
     }
     loggedIn() {
         return !!localStorage.getItem('token')
+    }
+
+    adminLoggedIn() {
+        if (!!localStorage.getItem('token') && localStorage.getItem('roleId') == "1")
+            return true;
+        else
+            return false;
+    }
+
+    userLoggedIn() {
+        if (!!localStorage.getItem('token') && localStorage.getItem('roleId') == "2")
+            return true;
+        else
+            return false;
     }
 }

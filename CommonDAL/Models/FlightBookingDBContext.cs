@@ -94,12 +94,12 @@ namespace CommonDAL.Models
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Password)
+                entity.Property(e => e.EmailId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.UserName)
+                entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -275,7 +275,7 @@ namespace CommonDAL.Models
 
                 entity.Property(e => e.DateOfBirth).HasColumnType("date");
 
-                entity.Property(e => e.Email)
+                entity.Property(e => e.EmailId)
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);

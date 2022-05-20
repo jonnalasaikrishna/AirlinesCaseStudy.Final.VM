@@ -7,7 +7,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'AirlineServices';
- 
+  imageUrl = '././assets/NavBg.jpg';
   constructor(private _authService:AuthService) {
    
   }
@@ -22,7 +22,24 @@ export class AppComponent {
     }
     else{
       return !this._authService.loggedIn();
+    }    
+  }
+  userLoggedIn(input:boolean):boolean{
+    if(input){
+      return this._authService.userLoggedIn();
+    }
+    else{
+      return !this._authService.userLoggedIn();
     }
   }
-  
+
+  adminLoggedIn(input:boolean):boolean{
+    if(input){
+      return this._authService.adminLoggedIn();
+    }
+    else{
+      return !this._authService.adminLoggedIn();
+    }
+
+  }
 }

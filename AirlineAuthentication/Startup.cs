@@ -45,6 +45,10 @@ namespace AirlineAuthentication
             app.UseSwaggerUI();
             app.UseRouting();
             app.UseAuthentication();
+            app.UseCors(x => x
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader());
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

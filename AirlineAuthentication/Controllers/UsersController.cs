@@ -30,12 +30,12 @@ namespace AirlineAuthentication.Controllers
         [Route("authenticate")]
         public IActionResult Authenticate([FromBody] Users userdata)
         {
-            IEnumerable<AuthenticateUser> Users = _flightBookingDBContext.AuthenticateUsers.ToList().Where(o => o.UserName.ToLower() == userdata.Name.ToLower() && o.Password == userdata.Password);
+            List<AuthenticateUser> Users = _flightBookingDBContext.AuthenticateUsers.ToList().Where(o => o.EmailId.ToLower() == userdata.EmailId.ToLower() && o.Password == userdata.Password).ToList();
             if(Users.Count() <=0)
             {
                 return Unauthorized("Invalid Credentials");
             }
-            var token = iJWTManager.Authenticate(userdata);
+            var token = iJWTManager.Authenticate(Users[0]);
             if (token == null)
             {
                 return Unauthorized();

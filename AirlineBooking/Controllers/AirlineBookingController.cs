@@ -68,23 +68,23 @@ namespace AirlineBooking.Controllers
 
         [HttpPost]
         [Route("InsertBookindDetails")]
-        public async Task<IActionResult> InsertUserDetails([FromBody] BookingViewModel bookingViewModel)
+        public async Task<IActionResult> InsertUserDetails([FromBody] BookingViewModel[] bookingViewModel)
         {
             try
             {
-                IEnumerable<UsersViewModel> _usersViewModels = bookingViewModel.usersViewModels;
+                IEnumerable<UsersViewModel> _usersViewModels = bookingViewModel[0].usersViewModels;
                 int setCount = _usersViewModels.Count();
                 InventoryDetail _inventorys = null;
                 BookingDetail bookings;
-                if (bookingViewModel.Seattype == 0)
+                if (bookingViewModel[0].Seattype == 0)
                 {
                     _inventorys = _flightBookingDBContext.InventoryDetails.ToList()
-                        .Where(o => o.FlightNumber == bookingViewModel.FlightNumber && o.FclassCount >= setCount).FirstOrDefault();
+                        .Where(o => o.FlightNumber == bookingViewModel[0].FlightNumber && o.FclassCount >= setCount).FirstOrDefault();
                 }
-                else if (bookingViewModel.Seattype == 1)
+                else if (bookingViewModel[0].Seattype == 1)
                 {
                     _inventorys = _flightBookingDBContext.InventoryDetails.ToList()
-                        .Where(o => o.FlightNumber == bookingViewModel.FlightNumber && o.StartDate == bookingViewModel.DateOfJourney
+                        .Where(o => o.FlightNumber == bookingViewModel[0].FlightNumber && o.StartDate == bookingViewModel[0].DateOfJourney
                         && o.NclassAvailableCount >= setCount).FirstOrDefault();
                 }
 
@@ -93,22 +93,22 @@ namespace AirlineBooking.Controllers
                     return BadRequest("Invalid Flight Number or Seats not Available");
                 }
                 string BookingId = GenerateBookingID();
-                string flightNumber = bookingViewModel.FlightNumber;
-                DateTime DateOfJourney = bookingViewModel.DateOfJourney;
-                string FromPlace = bookingViewModel.FromPlace;
-                string ToPlace = bookingViewModel.ToPlace;
-                string BoardingTime = bookingViewModel.BoardingTime;
-                string CreatedBy = bookingViewModel.CreatedBy;
-                string EmailID = bookingViewModel.EmailID;
+                string flightNumber = bookingViewModel[0].FlightNumber;
+                DateTime DateOfJourney = bookingViewModel[0].DateOfJourney;
+                string FromPlace = bookingViewModel[0].FromPlace;
+                string ToPlace = bookingViewModel[0].ToPlace;
+                string BoardingTime = bookingViewModel[0].BoardingTime;
+                string CreatedBy = bookingViewModel[0].CreatedBy;
+                string EmailID = bookingViewModel[0].EmailID;
 
                 int seatNumber = 0;
-                if (bookingViewModel.Seattype == 0)
+                if (bookingViewModel[0].Seattype == 0)
                 {
-                    seatNumber = (int)(_inventorys.FclassCount+1 - _inventorys.FclassAvailableCount);
+                    seatNumber = (int)(_inventorys.FclassCount + 1 - _inventorys.FclassAvailableCount);
                 }
-                else if (bookingViewModel.Seattype == 1)
+                else if (bookingViewModel[0].Seattype == 1)
                 {
-                    seatNumber = (int)(_inventorys.NclassCount+1 - _inventorys.NclassAvailableCount);
+                    seatNumber = (int)(_inventorys.NclassCount + 1 - _inventorys.NclassAvailableCount);
                 }
                 foreach (UsersViewModel usersViewModel in _usersViewModels)
                 {
@@ -131,7 +131,7 @@ namespace AirlineBooking.Controllers
                     bookings.CreateDate = DateTime.Now;
                     bookings.UpdateDate = DateTime.Now;
                     bookings.UpdatedBy = CreatedBy;
-                    bookings.Seattype = bookingViewModel.Seattype;
+                    bookings.Seattype = bookingViewModel[0].Seattype;
                     using (var scope = new TransactionScope())
                     {
                         _flightBookingDBContext.BookingDetails.Add(bookings);
@@ -147,11 +147,11 @@ namespace AirlineBooking.Controllers
                     StartDate = DateOfJourney,
                     startTime = BoardingTime,
                     NumberOfTickets = setCount,
-                    Seattype = bookingViewModel.Seattype
+                    Seattype = bookingViewModel[0].Seattype
                 });
 
 
-                return Ok("Booking Done Successfully");
+                return Accepted(new { Message = "Ticket Booked Successfully" });
             }
             catch(Exception ex)
             {

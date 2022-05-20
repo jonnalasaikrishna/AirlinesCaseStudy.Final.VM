@@ -1,9 +1,9 @@
-<div class="py-5">
+<div class="py-5" >
     <div class="row">
         <div class="col-md-6 mx-auto">
-            <div class="card rounded-0">
+            <div class="card rounded-0" style="background-color: rgb(58, 138, 58);" >
                 <div class="Card-header">
-                    <h3 class="mb-0" >Register</h3>
+                    <h3 class="mb-0" style="text-align: center;" >Register</h3>
                 </div>
                 <div class="card-body">
                     <div class="form">                        
@@ -19,12 +19,12 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">MobileNum</label>
-                            <input type="text" class="form-control" [(ngModel)]="registerUserData.mobileNum"
+                            <input type="number" class="form-control" [(ngModel)]="registerUserData.mobileNum"
                                 aria-describedby="emailHelp" placeholder="Enter Mobile Number" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" [(ngModel)]="registerUserData.email"
+                            <label for="exampleInputEmail1">Email ID </label>
+                            <input type="email" class="form-control" [(ngModel)]="registerUserData.emailId"
                                 aria-describedby="emailHelp" placeholder="Enter Email ID" required>
                         </div>
                         <div class="form-group">
@@ -43,7 +43,8 @@
                                 id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <button type="submit" (click)="registerUser()"
-                            class="btn btn-primary float-right">Register</button>
+                            class="btn btn-success float-right">Register</button>
+                            <!-- <lable style="color:green;">User was Registered</lable> -->
                     </div>
                 </div>
             </div>

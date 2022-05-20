@@ -1,0 +1,101 @@
+{
+  "Routes": [
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AdminUser/GetAdminData",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AdminUser/GetAdminData",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineBooking/cancel-ticket/{TicketID}",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineBooking/cancel-ticket/{TicketID}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineBooking/pnr-ticket/{TicketID}",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineBooking/pnr-ticket/{TicketID}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineBooking/GetBookingDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineBooking/GetBookingDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineBooking/InsertBookindDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineBooking/InsertBookindDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineInventory/search-inventories",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineInventory/search-inventories",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/AirlineInventory/InsertInventryDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/AirlineInventory/InsertInventryDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/UserRegistation/GetUserDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/UserRegistation/GetUserDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/UserRegistation/InsertUserDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/UserRegistation/InsertUserDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/users/authenticate",
+      "DownstreamScheme": "http",
+      "ServiceName": "catalogService",
+      "UpstreamPathTemplate": "/api/gatway/users/authenticate",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}

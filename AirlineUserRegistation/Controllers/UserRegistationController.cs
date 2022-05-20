@@ -39,12 +39,13 @@ namespace AirlineUserRegistation.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("InsertUserDetails")]
         public IActionResult InsertUser(UserRegister UserData)
         {
             try
             {
+                UserData.RoleId = (int)Common.CommonUser.RoleId.User;
                 _flightBookingDBContext.UserRegisters.Add(UserData);
                 _flightBookingDBContext.SaveChanges();
 

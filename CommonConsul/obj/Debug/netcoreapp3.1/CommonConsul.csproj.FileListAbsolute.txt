@@ -1,0 +1,10 @@
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\bin\Debug\netcoreapp3.1\CommonConsul.deps.json
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\bin\Debug\netcoreapp3.1\CommonConsul.dll
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\bin\Debug\netcoreapp3.1\CommonConsul.pdb
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.csproj.AssemblyReference.cache
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.AssemblyInfoInputs.cache
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.AssemblyInfo.cs
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.csproj.CoreCompileInputs.cache
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.dll
+C:\Users\cogdotnet15\Desktop\AirlineCaseStudy.Final\AirlinesCaseStudy.Final.VM\CommonConsul\obj\Debug\netcoreapp3.1\CommonConsul.pdb

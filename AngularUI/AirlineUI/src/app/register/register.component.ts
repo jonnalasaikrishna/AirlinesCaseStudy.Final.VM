@@ -9,14 +9,21 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegisterComponent  {
 
+  successMessage : string =""
+
   registerUserData: RegisterData = new RegisterData();
   constructor(private _auth: AuthService, private _router: Router) { }
+
+
   registerUser() {
-    this._auth.registerUser(this.registerUserData).subscribe(res => {
-      localStorage.setItem('token', res.token)
-      this._router.navigate(['/special'])
-    },
-      err => console.log(err));
+    debugger;
+    this._auth.registerUser(this.registerUserData).subscribe(res => this.successMessage = res);
+      // localStorage.setItem('token', res.token)
+      this._router.navigate(['/login'])   
+      
+  }
+  ngOnInit(): void{
+    
   }
 
 }

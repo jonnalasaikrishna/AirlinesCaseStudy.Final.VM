@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">A-Z Airline Service</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(11, 112, 95);">
+  <a class="navbar-brand" href="#">Airline Service</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,10 +7,14 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"  *ngIf="LoggedIn(true)" routerLink="/events">Bookings</a>
+        <a class="nav-link"  *ngIf="userLoggedIn(true)" routerLink="/bookings">Bookings</a>
+        
       </li>
       <li class="nav-item">
-        <a class="nav-link"  *ngIf="LoggedIn(true)" routerLink="/special">Plan Inventory</a>
+        <a class="nav-link"  *ngIf="adminLoggedIn(true)" routerLink="/inventorys">Plan Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  *ngIf="LoggedIn(true)" routerLink="/searchflight">Search Flight</a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -27,6 +31,6 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container" style="background-color: #d8dbe7;">
   <router-outlet></router-outlet>
 </div>

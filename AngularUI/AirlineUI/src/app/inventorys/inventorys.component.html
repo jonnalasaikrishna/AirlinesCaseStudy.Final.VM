@@ -1,0 +1,126 @@
+<h3 class="heading-report">Schedule a new Flights</h3>
+
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Flight Number<span style="color:red">*</span></label>
+
+                <input type="text" placeholder="Flight Number" [(ngModel)]="InventoryModel.flightNumber"
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Airline ID <span style="color:red">*</span></label>
+
+                <input type="number" placeholder="Flight Number" [(ngModel)]="InventoryModel.airlineId"
+                    class="form-control">
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">From Place : <span style="color:red">*</span></label>
+                <input type="text" placeholder="From Place" [(ngModel)]="InventoryModel.fromPlace" class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">To Place : <span style="color:red">*</span></label>
+                <input type="text" placeholder="To Place" [(ngModel)]="InventoryModel.toPlace" class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Start Date : <span style="color:red">*</span></label>
+                <input type="date" placeholder="Start Date" [(ngModel)]="InventoryModel.startDate" class="form-control">
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">End Date  : <span style="color:red">*</span></label>
+                <input type="date" placeholder="End Date Place" [(ngModel)]="InventoryModel.endDate"
+                    class="form-control">
+
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Start Time : <span style="color:red">*</span></label>
+                <input type="text" placeholder="Start Time" [(ngModel)]="InventoryModel.startTime" class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">End Time : <span style="color:red">*</span></label>
+                <input type="text" placeholder="End Time" [(ngModel)]="InventoryModel.endTime" class="form-control">
+
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">First class Seat Count : <span style="color:red">*</span></label>
+                <input type="number" [(ngModel)]="InventoryModel.fclassCount" placeholder="Business class Seat Count "
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Normal class Seat Count : <span style="color:red">*</span></label>
+                <input type="number" placeholder="Normal class Seat Count" [(ngModel)]="InventoryModel.nclassCount"
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">First class Available Seat Count : <span style="color:red">*</span></label>
+                <input type="number" [(ngModel)]="InventoryModel.fclassAvailableCount" placeholder="Business class Seat Count "
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Normal class Available Seat Count : <span style="color:red">*</span></label>
+                <input type="number" placeholder="Normal class Seat Count" [(ngModel)]="InventoryModel.nclassAvailableCount"
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">First Class Ticket Cost : <span style="color:red">*</span></label>
+                <input type="number" placeholder="Ticket Cost" [(ngModel)]="InventoryModel.fticketCost"
+                    class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-label">Normal Class Ticket Cost : <span style="color:red">*</span></label>
+                <input type="number" placeholder="Ticket Cost" [(ngModel)]="InventoryModel.nticketCost"
+                    class="form-control">
+
+            </div>
+        </div>
+        
+
+        <div class="col-md-12" style="text-align: center;">
+
+            <input type="submit" value="Submit" (click)="PostInventoryDetails()" class="btn btn-success">
+        <br>
+        </div>
+    </div>
+
